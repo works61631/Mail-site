@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>مولد التوقيع - ReNOVA</title>
+    <!-- استدعاء الخطوط بشكل مباشر لضمان عملها فوراً في المتصفح -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;600;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: sans-serif; padding: 20px; background-color: #f4f4f4; text-align: center; }
+        .box { background: white; padding: 30px; border-radius: 12px; max-width: 600px; margin: auto; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .input-group { margin-bottom: 15px; text-align: right; }
+        input { padding: 12px; width: 100%; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-family: 'Montserrat', Arial, sans-serif; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; color: #333; }
+        #signature-preview { margin-top: 30px; padding: 20px; border: 2px dashed #ceb384; display: inline-block; direction: ltr; background: white; }
+        button { background-color: #111; color: white; padding: 15px 30px; border: none; cursor: pointer; margin-top: 20px; font-size: 16px; border-radius: 6px; }
+        button:hover { background-color: #ceb384; }
+        
+        /* فرض نوع الخط والأوزان بداخل المعاينة للموقع */
+        .preview-name { font-family: 'Montserrat', Arial, sans-serif !important; font-weight: 700 !important; }
+        .preview-job { font-family: 'Montserrat', Arial, sans-serif !important; font-weight: 600 !important; }
+        .preview-text { font-family: 'Montserrat', Arial, sans-serif !important; font-weight: 500 !important; }
+        .preview-arabic { font-family: 'Cairo', Tahoma, Arial, sans-serif !important; font-weight: 500 !important; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>مولد التوقيع المؤسسي</h2>
+        <div class="input-group">
+            <label>الاسم الكامل (English)</label>
+            <input type="text" id="name" placeholder="" oninput="update()" dir="ltr">
+        </div>
+        <div class="input-group">
+            <label>المسمى الوظيفي (English)</label>
+            <input type="text" id="job" placeholder="" oninput="update()" dir="ltr">
+        </div>
+        <div class="input-group">
+            <label>رقم الهاتف</label>
+            <input type="text" id="phone" placeholder="" oninput="update()" dir="ltr">
+        </div>
+
+        <div id="signature-preview">
+            <!-- التوقيع النهائي المعتمد والمعدل بالخطوط الدقيقة -->
+            <table width="480" height="150" cellpadding="0" cellspacing="0" border="0" style="font-family: 'Montserrat', 'Cairo', Arial, sans-serif; background-color: transparent; width: 480px; height: 150px;" dir="ltr">
+              <tr>
+                <!-- 1. الزخرفة -->
+                <td valign="bottom" align="left" style="width: 98px; height: 150px; padding: 0;">
+                  <img src="https://raw.githubusercontent.com/works61631/Mail-icons-/main/decoration.png" width="98" alt="Decoration" style="display: block; border: none; max-width: 100%; height: auto;" />
+                </td>
+            
+                <!-- 2. بيانات التواصل -->
+                <td valign="middle" align="right" style="padding-left: 10px; padding-right: 15px; height: 150px;">
+                  <table cellpadding="0" cellspacing="0" border="0" dir="ltr" style="width: 100%;">
+                    <tr>
+                      <td align="right" valign="middle" class="preview-text" style="font-size: 10px; color: #111111; padding-right: 8px; height: 20px; white-space: nowrap;">
+                        <a id="link-phone" href="tel:+967784111400" style="font-family: 'Montserrat', Arial, sans-serif; font-weight: 500; color: #111111; text-decoration: none;"><span id="display-phone" class="preview-text">+967 784 111 400</span></a>
+                      </td>
+                      <td valign="middle" width="12" align="right">
+                        <img src="https://raw.githubusercontent.com/works61631/Mail-icons-/main/phone_icon.png" width="11" alt="Phone" style="display: block; border: none;" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="right" valign="middle" class="preview-text" style="font-size: 10px; color: #111111; padding-right: 8px; height: 20px; white-space: nowrap;">
+                        <a href="mailto:admin@renovayemen.com" style="font-family: 'Montserrat', Arial, sans-serif; font-weight: 500; color: #111111; text-decoration: none;">admin@renovayemen.com</a>
+                      </td>
+                      <td valign="middle" width="12" align="right">
+                        <img src="https://raw.githubusercontent.com/works61631/Mail-icons-/main/Email%20icon.png" width="11" alt="Email" style="display: block; border: none;" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="right" valign="middle" class="preview-text" style="font-size: 10px; color: #111111; padding-right: 8px; height: 20px; white-space: nowrap;">
+                        <a href="https://www.renovayemen.com" style="font-family: 'Montserrat', Arial, sans-serif; font-weight: 500; color: #111111; text-decoration: none;">www.renovayemen.com</a>
+                      </td>
+                      <td valign="middle" width="12" align="right">
+                        <img src="https://raw.githubusercontent.com/works61631/Mail-icons-/main/Website_icon.png" width="11" alt="Website" style="display: block; border: none;" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="right" valign="middle" class="preview-arabic" style="font-family: 'Cairo', Tahoma, Arial, sans-serif; font-weight: 500; font-size: 10px; color: #111111; padding-right: 8px; line-height: 15px;" dir="rtl">
+                        <a href="https://www.google.com/maps/search/?api=1&query=76Q3%2BQ9G%2C+%D8%B4%D8%A7%D8%B1%D8%B9+%D8%A7%D9%84%D8%AE%D9%85%D8%B3%D9%8A%D9%86%2C+Sana'a%2C+Yemen" target="_blank" style="color: #111111; text-decoration: none;">شارع الخمسين العمارة الملاصقة للبوابة<br>الرئيسية للجـامعة اللبنانية الدور الخـامس</a>
+                      </td>
+                      <td valign="middle" width="12" align="right">
+                        <a href="https://www.google.com/maps/search/?api=1&query=76Q3%2BQ9G%2C+%D8%B4%D8%A7%D8%B1%D8%B9+%D8%A7%D9%84%D8%AE%D9%85%D8%B3%D9%8A%D9%86%2C+Sana'a%2C+Yemen" target="_blank" style="text-decoration: none;">
+                          <img src="https://raw.githubusercontent.com/works61631/Mail-icons-/main/address_icon.png" width="11" alt="Address" style="display: block; border: none;" />
+                        </a>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+            
+                <!-- 3. الخط الفاصل البرمجي -->
+                <td valign="middle" width="2" align="center" style="height: 150px;">
+                  <table cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                      <td style="background-color: #ceb384; width: 2px; height: 90px; font-size: 1px; line-height: 1px;">&nbsp;</td>
+                    </tr>
+                  </table>
+                </td>
+            
+                <!-- 4. فراغ هندسي دقيق: 16 بكسل -->
+                <td width="16" style="width: 16px; min-width: 16px; height: 150px;">&nbsp;</td>
+            
+                <!-- 5. الشعار والاسم -->
+                <td valign="middle" align="left" style="height: 150px;">
+                  <table cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                      <td align="left" valign="top" style="padding-bottom: 10px;">
+                        <img src="https://raw.githubusercontent.com/works61631/Mail-icons-/main/Beige%20logo.png" height="23" alt="ReNOVA Advisory" style="display: block; border: none; height: 23px; width: auto;" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="left" id="display-name" class="preview-name" style="font-family: 'Montserrat', Arial, sans-serif; font-size: 15px; font-weight: 700; color: #111111; letter-spacing: -0.5px; white-space: nowrap;">
+                        Hamza Al-Mahaqari
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="left" id="display-job" class="preview-job" style="font-family: 'Montserrat', Arial, sans-serif; font-size: 11px; font-weight: 600; color: #ceb384; padding-top: 3px;">
+                        Manager
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+        </div>
+        <br>
+        <button onclick="copySignature()">نسخ التوقيع</button>
+    </div>
+
+    <script>
+        function update() {
+            document.getElementById('display-name').innerText = document.getElementById('name').value || "Hamza Al-Mahaqari";
+            document.getElementById('display-job').innerText = document.getElementById('job').value || "Manager";
+            document.getElementById('display-phone').innerText = document.getElementById('phone').value || "+967 784 111 400";
+            document.getElementById('link-phone').href = "tel:" + (document.getElementById('phone').value || "+967784111400");
+        }
+
+        function copySignature() {
+            const range = document.createRange();
+            range.selectNode(document.getElementById('signature-preview'));
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            document.execCommand('copy');
+            alert('تم نسخ التوقيع بالخطوط والأبعاد الصحيحة! اذهب الآن لصندوق إعدادات البريد واضغط لصق (Paste).');
+            window.getSelection().removeAllRanges();
+        }
+    </script>
+</body>
+</html>
